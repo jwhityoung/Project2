@@ -1,4 +1,15 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+#add-place-container
+#review-place-conatiner
+#options-container {
+  width: 80%;
+};
+
+#welcome {
+  text-align: center;
+  margin-bottom: 20px;
+};
+
+.jumbotron {
+  height: 75%;
+
 }

@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review a cool place</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container" id="review-place-container">
-    <form class="add-review-form">
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Select Cool Place to Review</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Review Cool Place</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </form>
-      </div>
+        <form class="add-review-form">
+            <div class="form-group" id="select-cool-place">
+                <label for="CoolPlaceList">Select Cool Place to Review</label>
+                <select class="form-control" id="place-review-list">
+                    <option>cool place</option>
+                    <option>second cool place</option>
+                    <option>third cool place</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Review Cool Place</label>
+                <textarea class="form-control" id="place-review" rows="3"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" id="review-submit">Submit</button>
+        </form>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/review.js"></script>
 </body>
+
 </html>

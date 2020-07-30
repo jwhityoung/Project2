@@ -16,11 +16,13 @@
             <div class="form-group" id="select-cool-place">
                 <label for="CoolPlaceList">Select Cool Place to Review</label>
                 <select class="form-control" id="place-review-list">
-                    <option>cool place</option>
-                    <option>second cool place</option>
-                    <option>third cool place</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <!--NEED TO PULL NAME FROM PLACES DB -->
+                    <?php 
+$sql = mysqli_query($connection, "SELECT name FROM Place");
+while ($row = $sql->fetch_assoc()){
+echo "<option value=\"owner1\">" . $row['name'] . "</option>";
+}
+?>
                 </select>
             </div>
             <div class="form-group">

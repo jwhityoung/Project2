@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    getAllPlaces().then()
+  getAllPlaces().then()
   // function to get *a* place based on id which should be stored as data-id in the html tag
   function getPlace() {
     var listItemData = $(this).data("place");

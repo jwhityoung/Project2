@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     description: DataTypes.TEXT,
     coordinates: DataTypes.GEOMETRY("POINT")
-  });
+  })
 
   Place.associate = function(models) {
     Place.belongsTo(models.User, {

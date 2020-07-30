@@ -13,7 +13,7 @@ $(document).ready(function() {
       userName: userNameInput.val().trim(),
       placeName: placeNameInput.val().trim(),
       placeDescription: placeDescriptionInput.val().trim(),
-      coordinates: placeCoordinates
+      coordinates: placeCoordinates,
     };
     console.log(userData);
     // Calling addPlace function which will post data to place-api
@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (
       !userData.userName ||
       !userData.placeName ||
-      !userData.placeDescription)
+      !userData.placeDescription) {
             return;
         }
         // If we have an email and password we run the addPlace function and clear the form **NOT WORKING PROPERLY
@@ -32,7 +32,10 @@ $(document).ready(function() {
         );
 
     //function to post userdata
+
+  });
   function addPlace(userData) {
-    $.post("/api/add-place", userData).then(getPlace)
+    console.log(userData)
+    $.post("/api/add-place", userData)
   }
 });

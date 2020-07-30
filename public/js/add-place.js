@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (
       !userData.userName ||
       !userData.placeName ||
-      !userData.placeDescription)
+      !userData.placeDescription) {
             return;
         }
         // If we have an email and password we run the addPlace function and clear the form **NOT WORKING PROPERLY

@@ -19,9 +19,9 @@ module.exports = function(app) {
       // }
     })
       .then(function(dbPlace) {
-        console.log("sequelize create success" + dbPlace);
+        console.log("sequelize create success" + dbPlace); // DEL except req. verbose
         res.json(dbPlace);
-        console.log("new place posted to /api/add-place");
+        console.log("new place posted to /api/add-place"); // DEL except req. verbose
         //res.redirect(307, "/api/view-place");
       })
       .catch(function(err) {
@@ -57,7 +57,20 @@ module.exports = function(app) {
   });
 
   // REVIEW & ASSOCIATED PLACE ROUTES ====================================
-
+  app.post("/api/review", function(req, res) {
+    console.log("API Route Reviews: " + JSON.stringify(req.body));
+    db.Review.create({
+      title: req.body.placeSelected,
+      body: req.body.placeReview
+      //rating: 5
+    })
+      .then(function(dbReview) {
+        res.json(dbReview);
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
   // USER LOGIN & SIGNUP ROUTES ==========================================
   //   app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //     res.json(req.user);

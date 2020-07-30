@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Welcome_1!",
-    "database": "Project2Dev",
+    "database": "project2dev",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
@@ -10,7 +10,7 @@
   "test": {
     "username": "root",
     "password": "Welcome_1!",
-    "database": "Project2Dev",
+    "database": "project2dev",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"

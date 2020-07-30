@@ -13,14 +13,14 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     rating: DataTypes.TINYINT
-  })
+  });
 
   Review.associate = function(models) {
     Review.belongsTo(models.Place, {
       foreignKey: {
         allowNull: false
       }
-    })
+    });
   }
 
   return Review

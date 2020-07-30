@@ -13,7 +13,7 @@ $(document).ready(function() {
       userName: userNameInput.val().trim(),
       placeName: placeNameInput.val().trim(),
       placeDescription: placeDescriptionInput.val().trim(),
-      coordinates: placeCoordinates
+      coordinates: placeCoordinates,
     };
     console.log(userData);
     // Calling addPlace function which will post data to place-api
@@ -35,6 +35,7 @@ $(document).ready(function() {
 
   });
   function addPlace(userData) {
+    console.log(userData)
     $.post("/api/add-place", userData)
   }
 });

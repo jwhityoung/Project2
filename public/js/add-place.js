@@ -32,7 +32,9 @@ $(document).ready(function() {
         //});
 
     //function to post userdata
+
+  });
   function addPlace(userData) {
-    $.post("/api/add-place", userData).then(getPlace)
+    $.post("/api/add-place", userData)
   }
 });

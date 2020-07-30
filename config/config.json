@@ -1,12 +1,18 @@
 {
   "development": {
-    "use_env_variable": "LOCALDB_URL"
+    "username": "root",
+    "password": "Welcome_1!",
+    "database": "Project2Dev",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "Welcome_1!",
     "database": "Project2Dev",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "production": {

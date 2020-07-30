@@ -1,4 +1,6 @@
-form.signup,
-form.login {
-  margin-top: 50px;
-}
+#add-place-container
+#review-place-conatiner
+/* /* #options-container  */
+{
+  width: 80%;
+};

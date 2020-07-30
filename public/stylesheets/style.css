@@ -4,3 +4,7 @@
 {
   width: 80%;
 };
+
+.place-list li {
+  animation-delay: calc(attr(data-count) * 150ms);
+}

@@ -10,6 +10,10 @@ module.exports = function(sequelize, DataTypes) {
     body: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    placeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
     //rating: DataTypes.TINYINT
   });
@@ -20,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
   //       allowNull: false
   //     }
   //   });
-  //};
+  // };
 
   return Review;
 };

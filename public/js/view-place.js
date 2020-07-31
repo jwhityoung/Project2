@@ -1,7 +1,4 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-  getAllPlaces().then()
-=======
   var key =
     "pk.eyJ1Ijoibm1pY2hlbDEyMyIsImEiOiJja2Q3azgzcjIweXRkMnJsb2thNjNxMHl1In0.P9dKHEfZIr3UNoSM2A3PxA";
   mapboxgl.accessToken = key;
@@ -44,7 +41,6 @@ $(document).ready(function() {
   let globalId = 1;
   getAllPlaces();
   getReviews(globalId);
->>>>>>> 266607779b767544e9ee590d051c7455f84348f1
   // function to get *a* place based on id which should be stored as data-id in the html tag
   function getPlace(id) {
       $(".info").empty();

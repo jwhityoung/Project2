@@ -8,7 +8,7 @@ $(document).ready(function() {
   $("#review-submit").on("click", function(event) {
     event.preventDefault();
     var userData = {
-      placeSelected: placeSelected.find(":selected").text(),
+      placeSelected: placeSelected.find(":selected").data("placeId"),
       placeReview: placeReviewInput.val().trim(),
       reviewTitle: reviewTitle.val().trim()
     };
@@ -27,8 +27,9 @@ $(document).ready(function() {
       //   userData.placeName,
       //   userData.placeDescription
       // );
-      //placeSelected.val("");
+      placeSelected.val("");
       placeReviewInput.val("");
+      reviewTitle.val("");
     }
   });
   //Function to displace place list

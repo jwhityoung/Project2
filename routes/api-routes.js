@@ -64,8 +64,10 @@ module.exports = function(app) {
   app.post("/api/review", function(req, res) {
     console.log("API Route Reviews: " + JSON.stringify(req.body));
     db.Review.create({
-      title: req.body.placeSelected,
-      body: req.body.placeReview
+      placeId: req.body.placeSelected,
+      body: req.body.placeReview,
+      title: req.body.reviewTitle
+
       //rating: 5
     })
       .then(function(dbReview) {

@@ -93,7 +93,7 @@ $(document).ready(function() {
       aTag.addClass("go-here");
       aTag.attr("id", "place-"+i)
       aTag.data("placeId", data[i].id);
-      aTag.data("count", i);
+      aTag.attr("style", "--animation-order: " + i + ";");
       aTag.text(data[i].name);
       liGen.html(aTag);
       //console.log(liGen)
@@ -127,6 +127,7 @@ $(document).ready(function() {
         btnGen.addClass("accordion");
         btnGen.data("reviewId", data[i].id);
         btnGen.attr("Id", "button-" + i);
+        btnGen.attr("style", "--animation-order: " + i + ";")
         btnGen.text(data[i].title)
         $(".reviews").append(btnGen)
         // Generating collapsible panel div that holds the review text

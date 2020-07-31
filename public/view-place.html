@@ -3,88 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Cool Places</title>
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-<link href='stylesheets/styleView.css' rel= 'stylesheet' />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="stylesheets/style.css" rel="stylesheet">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
-
-
-
 <body>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div id='map' class='viewMap' style='width: 800px; height: 500px;'></div>
-
-<script type='text/javascript' src='../config/config.js'></script>
-<script>
-
-var key = config.key
-mapboxgl.accessToken = key
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: [-97.7, 30.3], // starting position [lng, lat]
-    zoom: 8 // starting zoom
-});
-
-var geojson = {
-  type: 'FeatureCollection',
-  features: [{
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-77.032, 38.913]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'Washington, D.C.'
-    }
-  },
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-122.414, 37.776]
-    },
-    properties: {
-      title: 'Mapbox',
-      description: 'San Francisco, California'
-    }
-  }]
-};
-
-// add markers to map
-geojson.features.forEach(function(marker) {
-
-// create a HTML element for each feature
-var el = document.createElement('div');
-el.className = 'marker';
-
-// make a marker for each feature and add to the map
-new mapboxgl.Marker(el)
-  .setLngLat(marker.geometry.coordinates)
-  .addTo(map);
-});
-
-
-
-
-</script>
-
-
+<div class="row">
+    <div id='map' class='viewMap' style='width: 420px; height: 420px;'></div>
+    <div class="info"></div>
+  </div>
+  <div class="row">
+    <div class="place-div" ></div>
+    <div class="reviews"></div>
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <script type='text/javascript' src='./js/view-place.js'></script>
 </body>
 
 </html>

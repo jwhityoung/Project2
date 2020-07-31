@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   //Getting references 
   var userNameInput = $("#add-place-user-name");
   var placeNameInput = $("#add-place-name");
@@ -15,7 +15,7 @@ $(document).ready(function() {
     zoom: 8 // starting zoom
   });
   // When the form is submitted, we validate there's a user name, place name and description entered
-  $("#add-place-submit").on("click", function(event) {
+  $("#add-place-submit").on("click", function (event) {
     event.preventDefault();
 
     var userData = {
@@ -33,18 +33,15 @@ $(document).ready(function() {
       !userData.placeDescription) {
             return;
         }
-        // If we have an email and password we run the addPlace function and clear the form **NOT WORKING PROPERLY
-        // addPlace(userData.userName, userData.placeName, userData.placeDescription);
-        // userNameInput.val("");
-        // placeNameInput.val("");
-        // placeDescriptionInput.val("");
-        //);
 
-    //function to post userdata
+        userNameInput.val("");
+      placeNameInput.val("");
+      placeDescriptionInput.val("");
+   
 
   });
   function addPlace(userData) {
     console.log(userData)
     $.post("/api/add-place", userData)
-  }
+  };
 });

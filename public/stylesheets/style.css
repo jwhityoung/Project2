@@ -5,6 +5,93 @@
   width: 80%;
 };
 
-.place-list li {
+.row {
+  justify-content: space-around;
+  min-height: 200px;
+  flex-wrap: wrap;
+}
+
+/* MapBox Styling */
+.marker {
+  background-image: url('../../images/mapbox-icon.png'); 
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.viewMap {
+  margin: auto;
+  margin: 80px 40px;
+}
+
+/* Information Pane Styling */
+.info {
+  margin: 80px 40px;
+}
+
+.content > h2 {
+  color: #999;
+  font-weight: 200;
+}
+
+.content > p {
+  color: #333;
+  padding: 10px 5%;
+}
+
+/* Places List Styling */
+.place-div {
+  display: flex;
+  border: solid 1px grey;
+  border-radius: 5px;
+  width: 40%;
+  padding: auto;
+  margin: 0px 20px;
+  justify-content: center;
+}
+
+.place-ul {
+  list-style-type: none;
+  padding: auto;
+  margin: 10px 20px;
+}
+
+.place-ul > li {
+  margin: 10px 5px;
+}
+
+.place-list > a {
   animation-delay: calc(attr(data-count) * 150ms);
+}
+
+/* Reviews Styling */
+.reviews {
+  width: 40%;
+  border: solid 1px grey;
+  border-radius: 5px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }

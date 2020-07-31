@@ -74,6 +74,17 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
+
+  app.get("/api/review/:id", function(req, res) {
+    console.log("API Route: fetching reviews w/ placeId = " + req.params.id)
+    db.Review.findAll({
+      where: {
+        placeId: req.params.id
+      }
+    }).then(function(dbReview) {
+      res.json(dbReview);
+    });
+  });
   // USER LOGIN & SIGNUP ROUTES ==========================================
   
   //   app.post("/api/login", passport.authenticate("local"), function(req, res) {

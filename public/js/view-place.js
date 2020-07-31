@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  var key ="pk.eyJ1Ijoibm1pY2hlbDEyMyIsImEiOiJja2Q3azgzcjIweXRkMnJsb2thNjNxMHl1In0.P9dKHEfZIr3UNoSM2A3PxA";
+  var key =
+    "pk.eyJ1Ijoibm1pY2hlbDEyMyIsImEiOiJja2Q3azgzcjIweXRkMnJsb2thNjNxMHl1In0.P9dKHEfZIr3UNoSM2A3PxA";
   mapboxgl.accessToken = key;
 
   var map = new mapboxgl.Map({
@@ -37,13 +38,16 @@ $(document).ready(function() {
     ]
   };
   // Making API call to GET from database list of places then renders places with a render function
+  let globalId = 1;
   getAllPlaces();
-
+  getReviews(globalId);
   // function to get *a* place based on id which should be stored as data-id in the html tag
   function getPlace(id) {
-    $.get("api/place/:id", function(data) {
+    $.get("api/place/" + id, function(data) {
       console.log("getting place..." + id);
       renderPlaceInfo(data);
+      getReviews(id);
+      globalId = id;
     });
   }
   // function to get all places to be rendered in another function
@@ -56,21 +60,28 @@ $(document).ready(function() {
     });
   }
 
+    function getReviews(id) {
+        $.get("/api/review/" + id, function(data) {
+            renderReviews(data);
+        })
+    }
+
   function renderPlaceList(data) {
-    console.log("...rendering list from " + data);
+    console.log("...rendering list from " + data); // DEL
     $(".place-div").empty();
     var ulGen = $("<ul>");
     ulGen.addClass("place-ul");
     $(".place-div").append(ulGen);
     console.log(data[0]);
-    for(i=0; i<data.length; i++){
-      console.log(data[i])
+    for (i = 0; i < data.length; i++) {
+      console.log(data[i]);
       var liGen = $("<li>");
       liGen.addClass("place-list");
       liGen.data("placeId", data[i].id);
       liGen.data("count", i);
       var aTag = $("<a href='#'>");
       aTag.addClass("go-here");
+      aTag.data("placeId", data[i].id);
       aTag.text(data[i].name);
       liGen.html(aTag);
       //console.log(liGen)
@@ -82,21 +93,55 @@ $(document).ready(function() {
     console.log("...rendering place data from " + data);
     var divGen = $("<div>");
     divGen.addClass("content");
-    divGen.html("<h2>" + data.name + "</h2>" + "<br><p>" + data.description + "</p>");
+    divGen.html(
+      "<h2>" + data.name + "</h2>" + "<br><p>" + data.description + "</p>"
+    );
     $(".info").append(divGen);
   }
 
+ function renderReviews(data) {
+     console.log("...rendering reviews from " + data); // DEL
+     $(".reviews").empty();
+     for (i = 0; i < data.length; i++) {
+            console.log(data[i]);
+        var btnGen = $("<button>");
+        btnGen.addClass("accordion");
+        btnGen.data("reviewId", data[i].id);
+        btnGen.attr("Id", "button-" + i);
+        btnGen.text(data[i].title)
+        $(".reviews").append(btnGen)
+        // Generating collapsible panel div that holds the review text
+        var divGen = $("<div>");
+        divGen.addClass("panel");
+        divGen.attr("Id", "panel-" + i);
+        divGen.html("<p>" + data[i].body + "</p>")
+        $(".reviews").append(divGen)
+        $("#button-" + i).on("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+        });
+     }
+ }
+
+  // EVENT LISTENTERS ===============================
   $(".go-here").click(function(e) {
     e.preventDefault();
-    console.log("place has been clicked...");
-    var placeId = $(this).parent("li").data("id");
-    console.log(placeId)
-    getPlace(placeId).then(new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-      center: data.coordinates, // starting position [lng, lat]
-      zoom: 8 // starting zoom
-    }));
-  })
-
+    var placeId = $(this)
+      .parent("li")
+      .data("id");
+    console.log("place " + placeId + " has been clicked...");
+    getPlace(placeId).then(
+      new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
+        center: data.coordinates, // starting position [lng, lat]
+        zoom: 8 // starting zoom
+      })
+    );
+  });
 });

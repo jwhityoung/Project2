@@ -10,8 +10,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     description: DataTypes.STRING,
     //coordinates: DataTypes.GEOMETRY("POINT")
-    latitude: DataTypes.FLOAT,
-    longitude: DataTypes.FLOAT
+    latitude: DataTypes.DECIMAL,
+    longitude: DataTypes.DECIMAL
   });
 
   // Place.associate = function(models) {

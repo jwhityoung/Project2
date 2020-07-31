@@ -29,6 +29,8 @@
 /* Information Pane Styling */
 .info {
   margin: 80px 40px;
+  max-width: 640px;
+  overflow-wrap: normal;
 }
 
 .content > h2 {

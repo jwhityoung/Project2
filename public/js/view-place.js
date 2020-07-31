@@ -76,19 +76,18 @@ $(document).ready(function() {
     }
 
   function renderPlaceList(data) {
-    console.log("...rendering list from " + data); // DEL
+      console.log("...rendering list from " + data); // DEL
     $(".place-div").empty();
     var ulGen = $("<ul>");
     ulGen.addClass("place-ul");
     $(".place-div").append(ulGen);
-    console.log(data[0]);
     for (i = 0; i < data.length; i++) {
-      console.log(data[i]);
+        console.log(data[i]); // DEL
+      // Rendering List Items
       var liGen = $("<li>");
       liGen.addClass("place-list");
-      //liGen.addClass("go-here")
       liGen.data("placeId", data[i].id);
-      
+      // Rendering a-Tag within List Items
       var aTag = $("<a href='#'>");
       aTag.addClass("go-here");
       aTag.attr("id", "place-"+i)
@@ -96,13 +95,13 @@ $(document).ready(function() {
       aTag.attr("style", "--animation-order: " + i + ";");
       aTag.text(data[i].name);
       liGen.html(aTag);
-      //console.log(liGen)
+      // Appending...
       $(".place-ul").append(liGen);
-
+      // List item a-Tag Event Listeners
       $("#place-" + i).on("click", function(e) {
         e.preventDefault();
         var placeId = $(this).data("placeId");
-        console.log("place " + placeId + " has been clicked...");
+          console.log("place " + placeId + " has been clicked..."); // DEL
         getPlace(placeId)
       });
     }

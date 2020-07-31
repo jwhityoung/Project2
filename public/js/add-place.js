@@ -29,7 +29,7 @@ $(document).ready(function() {
         // userNameInput.val("");
         // placeNameInput.val("");
         // placeDescriptionInput.val("");
-        );
+        //);
 
     //function to post userdata
 

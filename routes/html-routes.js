@@ -22,15 +22,15 @@ module.exports = function(app) {
   });
 
   app.get("/view-place", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/view-place.html"))
+    res.sendFile(path.join(__dirname, "../public/view-place.html"));
   });
 
   //Redirects to page with forms for adding a place and adding a review
   app.get("/add-place", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add-place.html"))
+    res.sendFile(path.join(__dirname, "../public/add-place.html"));
   });
 
   app.get("/review", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/review.html"))
+    res.sendFile(path.join(__dirname, "../public/review.html"));
   });
 };

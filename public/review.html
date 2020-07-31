@@ -13,17 +13,24 @@
 <body>
     <div class="container" id="review-place-container">
         <form class="add-review-form">
+            <!--Dropdown to select cool place-->
             <div class="form-group" id="select-cool-place">
                 <label for="CoolPlaceList">Select Cool Place to Review</label>
                 <select class="form-control" id="place-review-list">
                     <!--NEED TO PULL NAME FROM PLACES DB -->
-            
                 </select>
             </div>
+            <!--Review Title-->
+            <div class="form-group">
+                <label for="Name of Cool Place">Review Title</label>
+                <input type="=text" class="form-control" id="add-place-user-name" placeholder="">
+            </div>
+            <!--Review Description-->
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Review Cool Place</label>
                 <textarea class="form-control" id="place-review" rows="3"></textarea>
             </div>
+            <!--Submit Button-->
             <button type="button" class="btn btn-primary" id="review-submit">Submit</button>
         </form>
     </div>

@@ -22,9 +22,14 @@ $(document).ready(function () {
       !userData.userName ||
       !userData.placeName ||
       !userData.placeDescription) {
-      return;
-    }
-   
+            return;
+        }
+        // If we have an email and password we run the addPlace function and clear the form **NOT WORKING PROPERLY
+        // addPlace(userData.userName, userData.placeName, userData.placeDescription);
+        // userNameInput.val("");
+        // placeNameInput.val("");
+        // placeDescriptionInput.val("");
+        //);
 
     //function to post userdata
 

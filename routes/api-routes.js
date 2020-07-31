@@ -1,8 +1,11 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
+var config = require("../config/config.json");
 //var passport = require("../config/passport");
 
 module.exports = function(app) {
+  var mapBoxKey = config.mapBox.key;
+  console.log(mapBoxKey);
   // PLACE & MAP DATA ROUTES =============================================
   // POST data that is input by the user -> code ajax call for html
   app.post("/api/add-place", function(req, res) {
@@ -19,9 +22,9 @@ module.exports = function(app) {
       // }
     })
       .then(function(dbPlace) {
-        console.log("sequelize create success" + dbPlace);
+        console.log("sequelize create success" + dbPlace); // DEL except req. verbose
         res.json(dbPlace);
-        console.log("new place posted to /api/add-place");
+        console.log("new place posted to /api/add-place"); // DEL except req. verbose
         //res.redirect(307, "/api/view-place");
       })
       .catch(function(err) {
@@ -31,6 +34,7 @@ module.exports = function(app) {
   // GET data for all places to be rendered in a list (dropdown or otherwise)
   app.get("/api/place", function(req, res) {
     db.Place.findAll({}).then(function(dbPlace) {
+      console.log(dbPlace);
       res.json(dbPlace);
     });
   });
@@ -57,8 +61,33 @@ module.exports = function(app) {
   });
 
   // REVIEW & ASSOCIATED PLACE ROUTES ====================================
+  app.post("/api/review", function(req, res) {
+    console.log("API Route Reviews: " + JSON.stringify(req.body));
+    db.Review.create({
+      title: req.body.placeSelected,
+      body: req.body.placeReview
+      //rating: 5
+    })
+      .then(function(dbReview) {
+        res.json(dbReview);
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
 
+  app.get("/api/review/:id", function(req, res) {
+    console.log("API Route: fetching reviews w/ placeId = " + req.params.id)
+    db.Review.findAll({
+      where: {
+        placeId: req.params.id
+      }
+    }).then(function(dbReview) {
+      res.json(dbReview);
+    });
+  });
   // USER LOGIN & SIGNUP ROUTES ==========================================
+  
   //   app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //     res.json(req.user);
   //   });

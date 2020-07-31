@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     body: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: false
     }
     //rating: DataTypes.TINYINT
   });

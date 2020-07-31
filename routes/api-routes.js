@@ -77,7 +77,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/review/:id", function(req, res) {
-    console.log("API Route: fetching reviews w/ placeId = " + req.params.id)
+    console.log("API Route: fetching reviews w/ placeId = " + req.params.id);
     db.Review.findAll({
       where: {
         placeId: req.params.id
@@ -87,7 +87,7 @@ module.exports = function(app) {
     });
   });
   // USER LOGIN & SIGNUP ROUTES ==========================================
-  
+
   //   app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //     res.json(req.user);
   //   });

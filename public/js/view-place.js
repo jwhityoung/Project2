@@ -43,11 +43,20 @@ $(document).ready(function() {
   getReviews(globalId);
   // function to get *a* place based on id which should be stored as data-id in the html tag
   function getPlace(id) {
+      $(".info").empty();
     $.get("api/place/" + id, function(data) {
       console.log("getting place..." + id);
       renderPlaceInfo(data);
       getReviews(id);
       globalId = id;
+      let coordinates = [parseFloat(data.latitude), parseFloat(data.longitude)];
+        console.log("moving map to: " + coordinates)  
+      new mapboxgl.Map({
+          container: "map",
+          style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
+          center: coordinates, // starting position [lng, lat]
+          zoom: 8 // starting zoom
+        })
     });
   }
   // function to get all places to be rendered in another function
@@ -77,15 +86,25 @@ $(document).ready(function() {
       console.log(data[i]);
       var liGen = $("<li>");
       liGen.addClass("place-list");
+      //liGen.addClass("go-here")
       liGen.data("placeId", data[i].id);
-      liGen.data("count", i);
+      
       var aTag = $("<a href='#'>");
       aTag.addClass("go-here");
+      aTag.attr("id", "place-"+i)
       aTag.data("placeId", data[i].id);
+      aTag.data("count", i);
       aTag.text(data[i].name);
       liGen.html(aTag);
       //console.log(liGen)
       $(".place-ul").append(liGen);
+
+      $("#place-" + i).on("click", function(e) {
+        e.preventDefault();
+        var placeId = $(this).data("placeId");
+        console.log("place " + placeId + " has been clicked...");
+        getPlace(placeId)
+      });
     }
   }
 
@@ -129,11 +148,9 @@ $(document).ready(function() {
  }
 
   // EVENT LISTENTERS ===============================
-  $(".go-here").click(function(e) {
-    e.preventDefault();
-    var placeId = $(this)
-      .parent("li")
-      .data("id");
+  $(".go-here").on("click", function() {
+    //e.preventDefault();
+    var placeId = $(this).data("placeId");
     console.log("place " + placeId + " has been clicked...");
     getPlace(placeId).then(
       new mapboxgl.Map({

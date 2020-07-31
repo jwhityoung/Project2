@@ -34,6 +34,7 @@ module.exports = function(app) {
   // GET data for all places to be rendered in a list (dropdown or otherwise)
   app.get("/api/place", function(req, res) {
     db.Place.findAll({}).then(function(dbPlace) {
+      console.log(dbPlace);
       res.json(dbPlace);
     });
   });
@@ -63,8 +64,10 @@ module.exports = function(app) {
   app.post("/api/review", function(req, res) {
     console.log("API Route Reviews: " + JSON.stringify(req.body));
     db.Review.create({
-      title: req.body.placeSelected,
-      body: req.body.placeReview
+      placeId: req.body.placeSelected,
+      body: req.body.placeReview,
+      title: req.body.reviewTitle
+
       //rating: 5
     })
       .then(function(dbReview) {
@@ -76,7 +79,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/review/:id", function(req, res) {
-    console.log("API Route: fetching reviews w/ placeId = " + req.params.id)
+    console.log("API Route: fetching reviews w/ placeId = " + req.params.id);
     db.Review.findAll({
       where: {
         placeId: req.params.id
@@ -86,7 +89,7 @@ module.exports = function(app) {
     });
   });
   // USER LOGIN & SIGNUP ROUTES ==========================================
-  
+
   //   app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //     res.json(req.user);
   //   });

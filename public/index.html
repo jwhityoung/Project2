@@ -5,75 +5,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cool Places</title>
+    <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body class="index-body">
+
+    <div class="container">
+        <div class="row">
+            <img src="images/logo5.png" alt="logo" style="height:500px; width:500px;" class="img">
+        </div>
+        <!-- <div class="row slogan-row"> -->
+            <h3 id="slogan">Connecting Cool People to Cool Places since 2020.</h3><br>
+        <!-- </div> -->
+        <div class="row button-row">
+         <div class="row-of-buttons">
+                <a class="btn btn-outline" href="/add-place"  title="Add a New Cool Place" role="button"><svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus" style="color: #d0ab64;"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+                </svg></a>
+           
+            <a class="btn btn-outline" href="/review" title="Review a Cool Place" role="button"><svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-star icon-center" style="color: #d0ab64;"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+            </svg></a>
+         
+            <a class="btn btn-outline" href="/view-place" title="View Cool Places" role="button"><svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-eye" style="color: #d0ab64;" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
+                <path fill-rule="evenodd"
+                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+            </svg></a>
+          </div>
+        </div>
    
+    </div>
+    <!-- Image and text -->
+    <!-- <nav class="navbar navbar-light" style="background-color: #61a6ab;" mx-auto>
+        <a class="navbar-brand mx-auto" id="CoolPlaces" href="#">
+            <img src="images/cool.png" id="logo" width="150" height="120" class="d-inline-block .affix-top" alt="">
+        </a>
+    </nav> -->
+
 
     <!--carousel-->
-   
-        <div class="container-fluid">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner .affix-top">
-                    <div class="carousel-item active .affix-top" data-spy="affix">
-                        <img class="d-block w-100 h-600" id ="austin-motel" src="images/waffle.jpg" alt="First slide" height="650px">
-                    </div> 
-                  <div class="carousel-item">
-                        <img class="d-block w-100" id="pennybacker" src="images/pennybacker.jpg" alt="Second slide" height="650px">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" id="hike-and-bike" src="images/hikeandbike.jpg" alt="Third slide" height="650px">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" id="central-standard" src="images/CentralStandard.jpg" alt="Fourth slide" height="650px">
-                    </div>
-                </div> 
-             </div>
-        </div> <br>
-
-    <!-- Cards with options on what to do -->
-
-
-  <div class="container" id="options-container">
-        <div class="row">
-            <div class="card col-md-4 text-center justify-content-center align-items-center" style="width: 18rem;">
-                <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                  </svg>
-                <div class="card-body">
-                    <a href="/add-place" class="add-a-cool-place">Add a Cool Place</a>
-                    <p class="card-text">Share a cool place you found.</p>
+<!-- 
+    <div class="container-fluid">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner .affix-top">
+                <div class="carousel-item active .affix-top" data-spy="affix">
+                    <img class="d-block w-100 h-600" id="austin-motel" src="images/waffle.jpg" alt="First slide"
+                        height="650px">
                 </div>
-            </div>
-            <div class="card col-md-4 text-center justify-content-center align-items-center" style="width: 18rem;">
-                <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-star icon-center" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-                  </svg>
-                <div class="card-body">
-                    <a href="/review" class="add-a-review">Review a Cool Place</a>
-                    <p class="card-text">Review a cool place you've been to.</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" id="pennybacker" src="images/pennybacker.jpg" alt="Second slide"
+                        height="650px">
                 </div>
-            </div>
-            <div class="card col-md-4 text-center justify-content-center align-items-center" style="width: 18rem;">
-                <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
-                    <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                  </svg>
-                <div class="card-body">
-                    <a href="/view-place" class="view-places">See Cool Places</a>
-                    <p class="card-text">See all the cool places.</p>
+                <div class="carousel-item">
+                    <img class="d-block w-100" id="hike-and-bike" src="images/hikeandbike.jpg" alt="Third slide"
+                        height="650px">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" id="central-standard" src="images/CentralStandard.jpg" alt="Fourth slide"
+                        height="650px">
                 </div>
             </div>
         </div>
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+    </div> <br> -->
+
+    <!-- Cards with options on what the user would like to do-->
+
+
+    <!-- <div class="container" id="options-container" style="background-color: #61a6ab;">
+        <div class="row">
+            <button id="share" type="button"
+                class="btn btn-outline-secondary col-md-4 text-center justify-content-center align-items-center"
+                style="width: 18rem; background-color: #61a6ab;">
+                <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-plus" style="color: #d0ab64;"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+                </svg>
+
+                <p>Share a cool place you found.</p>
+       
+    
+    </button>
+    <button id="share" type="button"
+        class="btn btn-outline-secondary col-md-4 text-center justify-content-center align-items-center"
+        style="width: 18rem; background-color: #61a6ab;">
+        <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-star icon-center" style="color: #d0ab64;"
+            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+        </svg>
+            <p>Review a cool place you've been to.</p>
+    </button>
+    <button id="share" type="button"
+        class="btn btn-outline-secondary col-md-4 text-center justify-content-center align-items-center"
+        style="width: 18rem; background-color: #61a6ab;">
+        <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-eye" style="color: #d0ab64;" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
+            <path fill-rule="evenodd"
+                d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+        </svg>
+            <p>See all the cool places.</p>
+    </button>
+    </div> -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 
-</html> 
+</html>

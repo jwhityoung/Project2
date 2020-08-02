@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Cool Place</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="stylesheets/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a Cool Place</title>
+  <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="stylesheets/style.css" rel="stylesheet">
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+
+<body class="add-place-body">
+  <!--Navbar with icons-->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #61a6ab;">
+    <a class="navbar-brand" id="CoolPlaces" href="#">
+      <img src="images/cool.png" id="logo" width="115" height="75" class="d-inline-block .affix-top" alt="">
+    </a>
+    <a class="navbar-brand  ml-auto" href="/"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-fill" style="color: #d0ab64;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
       <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
     </svg></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/review"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+    <a class="navbar-brand" href="/review"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-star-fill" style="color: #d0ab64;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
     </svg></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>   
-    <a class="navbar-brand" href="/view-place"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
-      <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-    </svg></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="/view-place"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-eye-fill" style="color: #d0ab64;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+      <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+    </svg></a>   
   </nav>
-<div class="container" id="add-place-container">
-    <form class="add-place-form">
-        <div class="form-group">
-            <label for="Name of Cool Place">Your Name</label>
-            <input type="=text" class="form-control" id="add-place-user-name" placeholder="">
-          </div>
-        <div class="form-group">
-          <label for="Name of Cool Place">Name of Cool Place</label>
-          <input type="=text" class="form-control" id="add-place-name" placeholder="">
-        </div>
-    
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Description of Cool Place</label>
-          <textarea class="form-control" id="add-place-description" rows="3"></textarea>
-        </div>
-   
-      
-            <button type="button" class="btn btn-primary" id="add-place-submit">Submit</button>
-      </form>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-    <script type="text/javascript" src="js/add-place.js"></script>
+  <!--Form to add new place-->
+  <div class="container" id="add-place-container">
+    <form class="add-place-form">
+      <!--User's Name-->
+      <div class="form-group">
+        <label for="Name of Cool Place">Your Name</label>
+        <input type="=text" class="form-control" id="add-place-user-name" placeholder="">
+      </div>
+      <!--Name of cool place-->
+      <div class="form-group">
+        <label for="Name of Cool Place">Name of Cool Place</label>
+        <input type="=text" class="form-control" id="add-place-name" placeholder="">
+      </div>
+      <!--Description of cool place-->
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description of Cool Place</label>
+        <textarea class="form-control" id="add-place-description" rows="5"></textarea>
+      </div>
+      <!--Submit Button-->
+      <button type="button" class="btn btn-primary" id="add-place-submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/add-place.js"></script>
 </body>
+
 </html>

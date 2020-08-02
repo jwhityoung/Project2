@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add a Cool Place</title>
-  <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link href="stylesheets/style.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />  
+    <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body class="add-place-body">
@@ -33,6 +34,7 @@
   <!--Form to add new place-->
   <div class="container" id="add-place-container">
     <form class="add-place-form">
+<<<<<<< HEAD
       <!--User's Name-->
       <div class="form-group">
         <label for="Name of Cool Place">Your Name</label>
@@ -52,6 +54,32 @@
       <button type="button" class="btn btn-primary" id="add-place-submit">Submit</button>
     </form>
   </div>
+=======
+        <div class="form-group">
+            <label for="Name of Cool Place">Your Name</label>
+            <input type="=text" class="form-control" id="add-place-user-name" placeholder="">
+          </div>
+        <div class="form-group">
+          <label for="Name of Cool Place">Name of Cool Place</label>
+          <input type="=text" class="form-control" id="add-place-name" placeholder="">
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description of Cool Place</label>
+          <textarea class="form-control" id="add-place-description" rows="3"></textarea>
+        </div>
+   
+      
+            <button type="button" class="btn btn-primary" id="add-place-submit">Submit</button>
+      </form>
+    </div>
+    <div class="row" style="display: flex; flex-direction: column;">
+      <label style="text-align: center; margin: auto; color: #999; font-weight: 200; font-size: small"> Click on location on the map to save coordinates</label>
+
+      <div id='map' class='viewMap' style='width: 420px; height: 420px; margin: 40px auto; justify-content: center;'>
+      </div>
+      </div>
+>>>>>>> bc9c661495d7b7933cf1f068d40c72af6f8a3768
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/add-place.js"></script>

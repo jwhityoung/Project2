@@ -34,6 +34,8 @@
 /* Information Pane Styling */
 .info {
   margin: 80px 40px;
+  max-width: 640px;
+  overflow-wrap: normal;
 }
 
 .content > h2 {
@@ -68,7 +70,8 @@
 }
 
 .place-list > a {
-  animation-delay: calc(attr(data-count) * 150ms);
+  animation: fadein 360ms ease-in;
+  animation-delay: calc(var(--animation-order) * 150ms)
 }
 
 /* Reviews Styling */
@@ -88,6 +91,8 @@
   border: none;
   outline: none;
   transition: 0.4s;
+  animation: fadein 420ms ease-in;
+  animation-delay: calc(var(--animation-order) * 150ms)
 }
 
 .active, .accordion:hover {
@@ -101,6 +106,7 @@
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 
 
 .index-body {
@@ -172,4 +178,22 @@ font-family: 'Thasadith', sans-serif;
   background-color: #61abab !important;
   border-color: #61abab !important;
   font-family: 'Thasadith', sans-serif !important;
+=======
+@keyframes fadein {
+  0% {
+    color: white;
+    opacity: 0;
+    filter: blur(15px);
+    transform: scale(0.6) translateY(-8px);
+  }
+  50% {
+    opacity: .6;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+>>>>>>> bc9c661495d7b7933cf1f068d40c72af6f8a3768
 }

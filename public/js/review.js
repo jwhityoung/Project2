@@ -21,12 +21,7 @@ $(document).ready(function() {
       return;
     } else {
       addReview(userData);
-      // Clear the form ** NOT WORKING PROPERLY
-      // reviewPlace(
-      //   userData.userName,
-      //   userData.placeName,
-      //   userData.placeDescription
-      // );
+      // Clearing out form
       placeSelected.val("");
       placeReviewInput.val("");
       reviewTitle.val("");

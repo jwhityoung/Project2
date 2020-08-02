@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a Cool Place</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
 </head>
@@ -50,6 +52,12 @@
             <button type="button" class="btn btn-primary" id="add-place-submit">Submit</button>
       </form>
     </div>
+    <div class="row" style="display: flex; flex-direction: column;">
+      <label style="text-align: center; margin: auto; color: #999; font-weight: 200; font-size: small"> Click on location on the map to save coordinates</label>
+
+      <div id='map' class='viewMap' style='width: 420px; height: 420px; margin: 40px auto; justify-content: center;'>
+      </div>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script type="text/javascript" src="js/add-place.js"></script>

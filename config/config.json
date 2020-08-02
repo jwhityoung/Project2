@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Boxwood10!",
+    "password": "Welcome_1!",
     "database": "project2dev",
     "host": "127.0.0.1",
     "port": 3306,
@@ -10,7 +10,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Boxwood10!",
+    "password": "Welcome_1!",
     "database": "project2dev",
     "host": "127.0.0.1",
     "port": 3306,

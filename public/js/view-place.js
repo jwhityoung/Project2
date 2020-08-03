@@ -76,9 +76,8 @@ $(document).ready(function() {
   }
 
   function deleteReview(id) {
-    $.delete("/api/review/" + id, function(data) {
-      renderReviews(data);
-    })
+    $.delete("/api/review/" + id).then(
+      getReviews(id))
   }
 
   function renderPlaceList(data) {
@@ -118,8 +117,9 @@ $(document).ready(function() {
     console.log("...rendering place data from " + data);
     var divGen = $("<div>");
     divGen.addClass("content");
+    var placeId = data.id
     divGen.html(
-      "<h2>" + data.name + "</h2>" + "<br><p>" + data.description + "</p>"
+      "<h2>" + data.name + "</h2><button class='delete' id='place-del' 'data-placeId=" + placeId +"'> delete </button>" + "<br><p>" + data.description + "</p>"
     );
     $(".info").append(divGen);
   }
@@ -175,4 +175,10 @@ $(document).ready(function() {
       })
     );
   });
+
+  $("#place-del").on("click", function() {
+    var placeId = $(this).data("placeId");
+      console.log("deleting place " + placeId)
+    $.delete("/api/place/" + placeId).then(getAllPlaces);
+  })
 });

@@ -3,9 +3,6 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: false
-      // validate: {
-      //   len: [1]
-      // }
     },
     body: {
       type: DataTypes.TEXT,
@@ -15,7 +12,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-    //rating: DataTypes.TINYINT
   });
 
   // Review.associate = function(models) {

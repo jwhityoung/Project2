@@ -80,7 +80,7 @@ $(document).ready(function() {
     for(i = 0; i < data.length; i++){
     $("#rev-del-" + i).on("click", function(e) {
       e.stopPropagation()
-      var revId = this.data("revid");
+      var revId = $(this).data("revid");
         console.log("clicked on review-" + revId) // DEL
       if(revId){
         deleteReview(revId);

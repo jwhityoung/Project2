@@ -9,18 +9,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     description: DataTypes.STRING,
-    //coordinates: DataTypes.GEOMETRY("POINT")
     latitude: DataTypes.DECIMAL,
     longitude: DataTypes.DECIMAL
   });
-
-  // Place.associate = function(models) {
-  //   Place.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
 
   return Place;
 };

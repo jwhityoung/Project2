@@ -7,17 +7,14 @@ $(document).ready(function() {
   // When the form is submitted, we validate there's a user name, place name and description entered
   $("#review-submit").on("click", function(event) {
     event.preventDefault();
+    console.log(parseInt($("#place-review-list :selected").data("placeId")));
     var userData = {
-      placeSelected: placeSelected.find(":selected").data("placeId"),
+      reviewTitle: reviewTitle.val().trim(),
       placeReview: placeReviewInput.val().trim(),
-      reviewTitle: reviewTitle.val().trim()
+      placeId: $("#place-review-list :selected").data("placeId")
     };
-    console.log(userData);
-    if (
-      !userData.placeSelected ||
-      !userData.placeReview ||
-      !userData.reviewTitle
-    ) {
+    console.log("submitting review..." + JSON.stringify(userData));
+    if (!userData.placeId || !userData.placeReview || !userData.reviewTitle) {
       return;
     } else {
       addReview(userData);
@@ -27,13 +24,13 @@ $(document).ready(function() {
       reviewTitle.val("");
     }
   });
-  //Function to displace place list
+  //Function to render a places list
   function getAllPlaces() {
     $.get("/api/place", function(data) {
       var places = data;
       console.log(places);
       for (i = 0; i < places.length; i++) {
-        console.log(places[i].name, places[i].id);
+        console.log("Rendering places list: " + places[i].name, places[i].id);
         var placeList = $("<option>");
         placeList.text(places[i].name);
         placeList.data("placeId", places[i].id);
@@ -43,8 +40,8 @@ $(document).ready(function() {
   }
 
   function addReview(userData) {
-    console.log(userData);
-    $.post("/api/review", userData);
+    console.log("adding review: " + userData);
+    $.post("/api/review/", userData);
   }
 
   getAllPlaces();

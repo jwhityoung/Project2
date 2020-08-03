@@ -38,9 +38,7 @@ $(document).ready(function() {
     ]
   };
   // Making API call to GET from database list of places then renders places with a render function
-  let globalId = 1;
-  getAllPlaces();
-  getReviews(globalId);
+  getAllPlaces()
   // function to get *a* place based on id which should be stored as data-id in the html tag
   function getPlace(id) {
       $(".info").empty();
@@ -64,16 +62,38 @@ $(document).ready(function() {
     $.get("/api/place", function(data) {
       //data = JSON.stringify(data);
       console.log("getting all places..." + data);
+      getReviews(data[0].id);
       renderPlaceInfo(data[0]);
       renderPlaceList(data);
     });
   }
+  // once you get a review
+  function getReviews(id) {
+      $.get("/api/review/" + id, function(data) {
+          renderReviews(data);
+          listenDeleteRev(data);
+      })
+  }
 
-    function getReviews(id) {
-        $.get("/api/review/" + id, function(data) {
-            renderReviews(data);
-        })
-    }
+  function listenDeleteRev(data) {
+    for(i = 0; i < data.length; i++){
+    $("#rev-del-" + i).on("click", function(e) {
+      e.stopPropagation()
+      var revId = $(this).data("revid");
+        console.log("clicked on review-" + revId) // DEL
+      if(revId){
+        deleteReview(revId);
+      }
+    })
+  }
+}
+
+  function deleteReview(id) {
+    $.ajax({
+      method: "DELETE",
+      url:"/api/review/" + id
+    }).then(getReviews(id))
+  }
 
   function renderPlaceList(data) {
     console.log("...rendering list from " + data); // DEL
@@ -109,11 +129,13 @@ $(document).ready(function() {
   }
 
   function renderPlaceInfo(data) {
+    $(".info").empty()
     console.log("...rendering place data from " + data);
     var divGen = $("<div>");
     divGen.addClass("content");
+    var placeId = data.id
     divGen.html(
-      "<h2>" + data.name + "</h2>" + "<br><p>" + data.description + "</p>"
+      "<h2>" + data.name + "</h2><button class='delete' id='place-del' data-placeId='" + placeId +"'> delete </button>" + "<br><p>" + data.description + "</p>"
     );
     $(".info").append(divGen);
   }
@@ -121,6 +143,7 @@ $(document).ready(function() {
  function renderReviews(data) {
      console.log("...rendering reviews from " + data); // DEL
      $(".reviews").empty();
+     
      for (i = 0; i < data.length; i++) {
             console.log(data[i]);
         var btnGen = $("<button>");
@@ -134,7 +157,7 @@ $(document).ready(function() {
         var divGen = $("<div>");
         divGen.addClass("panel");
         divGen.attr("Id", "panel-" + i);
-        divGen.html("<p>" + data[i].body + "</p>")
+        divGen.html("<p>" + data[i].body + "</p><button class='delete' id='rev-del-" + i +"' data-revId='" + i +"'> delete </button>")
         $(".reviews").append(divGen)
         $("#button-" + i).on("click", function() {
             this.classList.toggle("active");
@@ -144,13 +167,16 @@ $(document).ready(function() {
             } else {
               panel.style.display = "block";
             }
-        });
+          })
      }
+     listenDeleteRev(data);
  }
 
-  // EVENT LISTENTERS ===============================
-  $(".go-here").on("click", function() {
-    //e.preventDefault();
+// EVENT LISTENTERS ===============================
+window.setTimeout(function() {
+
+  $(".go-here").on("click", function(e) {
+    e.stopPropagation()
     var placeId = $(this).data("placeId");
     console.log("place " + placeId + " has been clicked...");
     getPlace(placeId).then(
@@ -161,5 +187,17 @@ $(document).ready(function() {
         zoom: 8 // starting zoom
       })
     );
+    getReviews(placeId).then(renderReviews(data))
   });
+
+  $("#place-del").on("click", function(e) {
+    e.stopPropagation();
+    var placeId = $(this).data("placeid");
+      console.log("deleting place " + placeId)
+    $.ajax({
+      method: "DELETE",
+      url: "/api/place/" + placeId
+    }).then(getAllPlaces);
+  })
+}, 4200);
 });

@@ -55,7 +55,7 @@
   display: flex;
   border: solid 1px grey;
   border-radius: 5px;
-  width: 40%;
+  min-width: 420px;
   padding: auto;
   margin: 0px 20px;
   justify-content: center;
@@ -86,7 +86,7 @@ li:hover {
 
 /* Reviews Styling */
 .reviews {
-  width: 40%;
+  min-width: 420px;
   border: solid 1px grey;
   border-radius: 5px;
   font-family: 'Thasadith', sans-serif;
@@ -158,20 +158,29 @@ h3 {
   font-family: 'Thasadith', sans-serif;
   font-weight: bold;
   font-size: 40px;
+  text-shadow: 2px 2px #333;
 }
 
 .btn-outline {
   /* color: #4fbfa8; */
   border-color: #f6f6e9;
   width: 14rem;
+  margin: 0px 20px;
+  background-color: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(5px);
+  box-shadow: 2px 0px 15px 1px #333;
+}
 
-
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.60);
+  transition: 420ms ease-in-out;
 }
 
 .slogan-row {
   margin-bottom: 0px;
 }
 .row-of-buttons {
+  justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto; 
 }

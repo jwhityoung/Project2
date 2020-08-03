@@ -67,7 +67,7 @@ $(document).ready(function() {
       renderPlaceList(data);
     });
   }
-
+  // once you get a review
   function getReviews(id) {
       $.get("/api/review/" + id, function(data) {
           renderReviews(data);

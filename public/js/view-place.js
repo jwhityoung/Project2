@@ -69,11 +69,17 @@ $(document).ready(function() {
     });
   }
 
-    function getReviews(id) {
-        $.get("/api/review/" + id, function(data) {
-            renderReviews(data);
-        })
-    }
+  function getReviews(id) {
+      $.get("/api/review/" + id, function(data) {
+          renderReviews(data);
+      })
+  }
+
+  function deleteReview(id) {
+    $.delete("/api/review/" + id, function(data) {
+      renderReviews(data);
+    })
+  }
 
   function renderPlaceList(data) {
     console.log("...rendering list from " + data); // DEL
@@ -134,7 +140,7 @@ $(document).ready(function() {
         var divGen = $("<div>");
         divGen.addClass("panel");
         divGen.attr("Id", "panel-" + i);
-        divGen.html("<p>" + data[i].body + "</p>")
+        divGen.html("<p>" + data[i].body + "</p><button class='delete' id='rev-del-" + i +"' data-revId=" + i +"> delete </button>")
         $(".reviews").append(divGen)
         $("#button-" + i).on("click", function() {
             this.classList.toggle("active");
@@ -144,6 +150,13 @@ $(document).ready(function() {
             } else {
               panel.style.display = "block";
             }
+          $("#rev-del-" + i).on("click", function() {
+            var revId = this.data("revId");
+              console.log("clicked on review-" + revId) // DEL
+            if(revId){
+              deleteReview(revId);
+            }
+          })
         });
      }
  }

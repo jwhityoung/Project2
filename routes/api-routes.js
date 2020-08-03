@@ -85,4 +85,14 @@ module.exports = function(app) {
       res.json(dbReview);
     });
   });
+
+  app.delete("/api/review/:id", function (req, res) {
+    db.Review.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbReview) {
+      res.json(dbReview);
+    });
+  });
 };

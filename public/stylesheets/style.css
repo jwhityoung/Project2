@@ -101,6 +101,23 @@
   overflow: hidden;
 }
 
+.panel > p {
+  max-width: 70%;
+  word-wrap: normal;
+}
+
+.delete {
+  font-size: smaller;
+  background: transparent;
+  border: transparent;
+  color: #999;
+  float: right;
+}
+
+.delete:hover {
+  color: red;
+}
+
 @keyframes fadein {
   0% {
     color: white;

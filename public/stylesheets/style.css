@@ -1,9 +1,14 @@
-#add-place-container
-#review-place-conatiner
-/* /* #options-container  */
+#add-place-container,
+#review-place-container
 {
-  width: 80%;
+  width: 50%;
 };
+
+
+.form-control{
+  display: block;
+  width: 30%;
+}
 
 .row {
   justify-content: space-around;
@@ -31,6 +36,8 @@
   margin: 80px 40px;
   max-width: 640px;
   overflow-wrap: normal;
+  font-family: 'Thasadith', sans-serif;
+
 }
 
 .content > h2 {
@@ -52,6 +59,7 @@
   padding: auto;
   margin: 0px 20px;
   justify-content: center;
+  font-family: 'Thasadith', sans-serif;
 }
 
 .place-ul {
@@ -74,6 +82,7 @@
   width: 40%;
   border: solid 1px grey;
   border-radius: 5px;
+  font-family: 'Thasadith', sans-serif;
 }
 
 .accordion {
@@ -117,6 +126,69 @@
 .delete:hover {
   color: red;
 }
+/* Joyce's Changes */
+.index-body {
+  background-image: url(https://images.unsplash.com/photo-1571292098320-997aa03a5d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=594&q=80);
+  background-size: auto;
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+h3 {
+  text-align: center;
+}
+
+#slogan {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #d0ab64;
+  font-family: 'Thasadith', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.btn-outline {
+  /* color: #4fbfa8; */
+  border-color: #f6f6e9;
+  width: 14rem;
+
+
+}
+
+.slogan-row {
+  margin-bottom: 0px;
+}
+.row-of-buttons {
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.navbar {
+  margin-bottom: 30px;
+}
+
+.add-place-body,
+.review-body,
+.view-body{
+  background-color: #f6f6e9;
+}
+
+
+label {
+font-family: 'Thasadith', sans-serif;
+}
+
+.btn-primary {
+  background-color: #61abab !important;
+  border-color: #61abab !important;
+  font-family: 'Thasadith', sans-serif !important;
 
 @keyframes fadein {
   0% {

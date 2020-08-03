@@ -1,10 +1,10 @@
 // Requiring our models and passport as we've configured it
+require("dotenv").config()
 var db = require("../models");
 var config = require("../config/config.json");
-//var passport = require("../config/passport");
 
 module.exports = function(app) {
-  var mapBoxKey = config.mapBox.key;
+  var mapBoxKey = process.env.MAPBOX_KEY;
   console.log(mapBoxKey);
   // PLACE & MAP DATA ROUTES =============================================
   // POST data that is input by the user -> code ajax call for html

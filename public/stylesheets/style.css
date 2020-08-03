@@ -80,8 +80,7 @@ li:hover {
 }
 
 .place-list > a {
-  animation: fadein 360ms ease-in;
-  animation-delay: calc(var(--animation-order) * 150ms)
+  animation: fadein calc(var(--animation-order) * 150ms + 150ms) ease-in;
 }
 
 /* Reviews Styling */
@@ -90,6 +89,15 @@ li:hover {
   border: solid 1px grey;
   border-radius: 5px;
   font-family: 'Thasadith', sans-serif;
+}
+
+.reviews > h2 {
+  color: #666;
+  margin-left: 20px;
+}
+
+.place-ul > h2{
+  color: #666;
 }
 
 .accordion {
@@ -101,9 +109,7 @@ li:hover {
   text-align: left;
   border: none;
   outline: none;
-  transition: 0.4s;
-  animation: fadein 420ms ease-in;
-  animation-delay: calc(var(--animation-order) * 150ms)
+  animation: fadein calc(var(--animation-order) * 150ms + 150ms) ease-in;
 }
 
 .active, .accordion:hover {
@@ -116,11 +122,13 @@ li:hover {
   background-color: white;
   display: none;
   overflow: hidden;
+  transition: 420ms;
 }
 
 .panel > p {
   max-width: 70%;
   word-wrap: normal;
+  animation: fadein 420ms ease-in-out;
 }
 
 .delete {
@@ -220,7 +228,7 @@ font-family: 'Thasadith', sans-serif;
     filter: blur(15px);
     transform: scale(0.6) translateY(-8px);
   }
-  50% {
+  80% {
     opacity: .6;
     filter: blur(5px);
   }

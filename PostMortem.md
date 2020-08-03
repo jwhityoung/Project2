@@ -1,4 +1,4 @@
-# Cool Places Post-mortem
+# Cool Places Post-Mortem
 ## Things we did well
 * Pacing - We hit milestones on a regular basis and made consistent progress throughout the project.
 * Communication - Each member communicated effectively and responded to each other within an adequate time.

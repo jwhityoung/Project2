@@ -38,8 +38,7 @@ $(document).ready(function() {
     ]
   };
   // Making API call to GET from database list of places then renders places with a render function
-  var globalId = 1;
-  getAllPlaces();
+  getAllPlaces()
   // function to get *a* place based on id which should be stored as data-id in the html tag
   function getPlace(id) {
       $(".info").empty();
@@ -63,6 +62,7 @@ $(document).ready(function() {
     $.get("/api/place", function(data) {
       //data = JSON.stringify(data);
       console.log("getting all places..." + data);
+      getReviews(data[0].id);
       renderPlaceInfo(data[0]);
       renderPlaceList(data);
     });
@@ -71,7 +71,7 @@ $(document).ready(function() {
   function getReviews(id) {
       $.get("/api/review/" + id, function(data) {
           renderReviews(data);
-          //listenDeleteRev(data);
+          listenDeleteRev(data);
       })
   }
 
@@ -174,7 +174,6 @@ $(document).ready(function() {
 
 // EVENT LISTENTERS ===============================
 window.setTimeout(function() {
-  getReviews(globalId);
 
   $(".go-here").on("click", function(e) {
     e.stopPropagation()
@@ -188,6 +187,7 @@ window.setTimeout(function() {
         zoom: 8 // starting zoom
       })
     );
+    getReviews(placeId).then(renderReviews(data))
   });
 
   $("#place-del").on("click", function(e) {

@@ -7,4 +7,4 @@
 * Git Workflow - Learned how to properly fix a commit error in GitHub
 * MySQL - Navigating and connecting MySQL to VS Code skills were improved during this project
 * Document More - Make commit comments more visible and utilize the github Kanban and the issues ticket feature.
-*Developed a deeper understanding of how the front-end and back-end work together to produce the final product.
+* Developed a deeper understanding of how the front-end and back-end work together to produce the final product.

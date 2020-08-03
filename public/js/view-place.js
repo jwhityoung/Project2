@@ -100,6 +100,7 @@ $(document).ready(function() {
     $(".place-div").empty();
     var ulGen = $("<ul>");
     ulGen.addClass("place-ul");
+    ulGen.html("<h2>Places to Check Out</h2>")
     $(".place-div").append(ulGen);
     console.log(data[0]);
     for (i = 0; i < data.length; i++) {
@@ -143,7 +144,7 @@ $(document).ready(function() {
  function renderReviews(data) {
      console.log("...rendering reviews from " + data); // DEL
      $(".reviews").empty();
-     
+     $(".reviews").html("<h2> What People Have Said </h2>");
      for (i = 0; i < data.length; i++) {
             console.log(data[i]);
         var btnGen = $("<button>");

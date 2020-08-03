@@ -72,8 +72,22 @@ $(document).ready(function() {
   function getReviews(id) {
       $.get("/api/review/" + id, function(data) {
           renderReviews(data);
+          listenDeleteRev(data);
       })
   }
+
+  function listenDeleteRev(data) {
+    for(i = 0; i < data.length; i++){
+    $("#rev-del-" + i).on("click", function(e) {
+      e.stopPropagation()
+      var revId = this.data("revid");
+        console.log("clicked on review-" + revId) // DEL
+      if(revId){
+        deleteReview(revId);
+      }
+    })
+  }
+}
 
   function deleteReview(id) {
     $.ajax({
@@ -152,15 +166,7 @@ $(document).ready(function() {
             } else {
               panel.style.display = "block";
             }
-          $("#rev-del-" + i).on("click", function(e) {
-            e.stopPropagation()
-            var revId = this.data("revid");
-              console.log("clicked on review-" + revId) // DEL
-            if(revId){
-              deleteReview(revId);
-            }
           })
-        });
      }
  }
 

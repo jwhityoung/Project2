@@ -41,7 +41,7 @@
 }
 
 .content > h2 {
-  color: #999;
+  color: black;
   font-weight: 200;
 }
 
@@ -55,10 +55,10 @@
   display: flex;
   border: solid 1px grey;
   border-radius: 5px;
-  width: 40%;
+  min-width: 420px;
   padding: auto;
   margin: 0px 20px;
-  justify-content: center;
+  justify-content: left;
   font-family: 'Thasadith', sans-serif;
 }
 
@@ -86,15 +86,15 @@ li:hover {
 
 /* Reviews Styling */
 .reviews {
-  width: 40%;
+  min-width: 420px;
   border: solid 1px grey;
   border-radius: 5px;
   font-family: 'Thasadith', sans-serif;
 }
 
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: #61abab;
+  color: white;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -107,7 +107,8 @@ li:hover {
 }
 
 .active, .accordion:hover {
-  background-color: #ccc;
+  background-color:#d0aa646e;
+  color: #333;
 }
 
 .panel {
@@ -126,13 +127,19 @@ li:hover {
   font-size: smaller;
   background: transparent;
   border: transparent;
-  color: #999;
+  color: rgba(153, 153, 153, 0.335);
   float: right;
 }
 
 .delete:hover {
   color: red;
 }
+
+#footer {
+  min-height: 100px;
+  height: 420px;
+}
+
 /* Joyce's Changes */
 .index-body {
   background-image: url(https://images.unsplash.com/photo-1571292098320-997aa03a5d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=594&q=80);
@@ -158,20 +165,29 @@ h3 {
   font-family: 'Thasadith', sans-serif;
   font-weight: bold;
   font-size: 40px;
+  text-shadow: 2px 2px #333;
 }
 
 .btn-outline {
   /* color: #4fbfa8; */
   border-color: #f6f6e9;
   width: 14rem;
+  margin: 0px 20px;
+  background-color: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(5px);
+  box-shadow: 2px 0px 15px 1px #333;
+}
 
-
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.60);
+  transition: 420ms ease-in-out;
 }
 
 .slogan-row {
   margin-bottom: 0px;
 }
 .row-of-buttons {
+  justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto; 
 }

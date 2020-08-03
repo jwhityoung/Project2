@@ -5,30 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review a cool place</title>
+    <link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="review-body">
+    <!--Navbar with icons-->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #61a6ab;">
+        <a class="navbar-brand" id="CoolPlaces" href="#">
+            <img src="images/cool.png" id="logo" width="115" height="75" class="d-inline-block .affix-top" alt="">
+          </a>
+        <a class="navbar-brand ml-auto" href="/"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-fill" style="color: #d0ab64;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+          </svg></a>
+        <a class="navbar-brand" href="/add-place"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus" style="color: #d0ab64;"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+            </svg></a>
+        <a class="navbar-brand" href="/view-place"><svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-eye-fill" style="color: #d0ab64;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+            <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+          </svg></a>       
+    </nav>
+    <!--Form to add review-->
     <div class="container" id="review-place-container">
         <form class="add-review-form">
+            <!--Dropdown to select cool place-->
             <div class="form-group" id="select-cool-place">
                 <label for="CoolPlaceList">Select Cool Place to Review</label>
                 <select class="form-control" id="place-review-list">
-                    <!--NEED TO PULL NAME FROM PLACES DB -->
-                    <?php 
-$sql = mysqli_query($connection, "SELECT name FROM Place");
-while ($row = $sql->fetch_assoc()){
-echo "<option value=\"owner1\">" . $row['name'] . "</option>";
-}
-?>
                 </select>
             </div>
+            <!--Review Title-->
+            <div class="form-group">
+                <label for="Name of Cool Place">Review Title</label>
+                <input type="=text" class="form-control" id="review-title" placeholder="">
+            </div>
+            <!--Review Description-->
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Review Cool Place</label>
                 <textarea class="form-control" id="place-review" rows="3"></textarea>
             </div>
+            <!--Submit Button-->
             <button type="button" class="btn btn-primary" id="review-submit">Submit</button>
         </form>
     </div>

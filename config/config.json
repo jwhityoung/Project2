@@ -5,22 +5,25 @@
     "database": "project2dev",
     "host": "127.0.0.1",
     "port": 3306,
-    "dialect": "mysql",
-    "key": "pk.eyJ1Ijoibm1pY2hlbDEyMyIsImEiOiJja2Q3azgzcjIweXRkMnJsb2thNjNxMHl1In0.P9dKHEfZIr3UNoSM2A3PxA"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Brogann18",
     "database": "project2dev",
+=======
+    "password": "Welcome_1!",
+    "database": "qajpkr2qmul41edm",
+>>>>>>> 30c364a6e7189212d1d723138b7d995f4d7fbe90
     "host": "127.0.0.1",
     "port": 3306,
-    "dialect": "mysql",
-    "key": "pk.eyJ1Ijoibm1pY2hlbDEyMyIsImEiOiJja2Q3azgzcjIweXRkMnJsb2thNjNxMHl1In0.P9dKHEfZIr3UNoSM2A3PxA"
+    "dialect": "mysql"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL"
   },
   "mapBox": {
-    "key": "pk.eyJ1Ijoibm1pY2hlbDEyMyIsImEiOiJja2Q3azgzcjIweXRkMnJsb2thNjNxMHl1In0.P9dKHEfZIr3UNoSM2A3PxA"
+    "use_env_variable": "MAPBOX_KEY"
   }
 }

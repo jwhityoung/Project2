@@ -69,11 +69,16 @@ $(document).ready(function() {
     });
   }
 
-    function getReviews(id) {
-        $.get("/api/review/" + id, function(data) {
-            renderReviews(data);
-        })
-    }
+  function getReviews(id) {
+      $.get("/api/review/" + id, function(data) {
+          renderReviews(data);
+      })
+  }
+
+  function deleteReview(id) {
+    $.delete("/api/review/" + id).then(
+      getReviews(id))
+  }
 
   function renderPlaceList(data) {
     console.log("...rendering list from " + data); // DEL
@@ -112,8 +117,9 @@ $(document).ready(function() {
     console.log("...rendering place data from " + data);
     var divGen = $("<div>");
     divGen.addClass("content");
+    var placeId = data.id
     divGen.html(
-      "<h2>" + data.name + "</h2>" + "<br><p>" + data.description + "</p>"
+      "<h2>" + data.name + "</h2><button class='delete' id='place-del' 'data-placeId=" + placeId +"'> delete </button>" + "<br><p>" + data.description + "</p>"
     );
     $(".info").append(divGen);
   }
@@ -134,7 +140,7 @@ $(document).ready(function() {
         var divGen = $("<div>");
         divGen.addClass("panel");
         divGen.attr("Id", "panel-" + i);
-        divGen.html("<p>" + data[i].body + "</p>")
+        divGen.html("<p>" + data[i].body + "</p><button class='delete' id='rev-del-" + i +"' data-revId=" + i +"> delete </button>")
         $(".reviews").append(divGen)
         $("#button-" + i).on("click", function() {
             this.classList.toggle("active");
@@ -144,6 +150,13 @@ $(document).ready(function() {
             } else {
               panel.style.display = "block";
             }
+          $("#rev-del-" + i).on("click", function() {
+            var revId = this.data("revId");
+              console.log("clicked on review-" + revId) // DEL
+            if(revId){
+              deleteReview(revId);
+            }
+          })
         });
      }
  }
@@ -162,4 +175,10 @@ $(document).ready(function() {
       })
     );
   });
+
+  $("#place-del").on("click", function() {
+    var placeId = $(this).data("placeId");
+      console.log("deleting place " + placeId)
+    $.delete("/api/place/" + placeId).then(getAllPlaces);
+  })
 });

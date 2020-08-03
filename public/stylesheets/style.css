@@ -110,7 +110,23 @@
   overflow: hidden;
 }
 
+.panel > p {
+  max-width: 70%;
+  word-wrap: normal;
+}
 
+.delete {
+  font-size: smaller;
+  background: transparent;
+  border: transparent;
+  color: #999;
+  float: right;
+}
+
+.delete:hover {
+  color: red;
+}
+/* Joyce's Changes */
 .index-body {
   background-image: url(https://images.unsplash.com/photo-1571292098320-997aa03a5d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=594&q=80);
   background-size: auto;

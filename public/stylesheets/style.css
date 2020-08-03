@@ -70,6 +70,13 @@
 
 .place-ul > li {
   margin: 10px 5px;
+  background-color: linear-gradient(transparent, #999);
+  font-size: large;
+}
+
+li:hover {
+  transform: scale(1.25);
+  transition: 420ms ease-in-out
 }
 
 .place-list > a {
@@ -137,7 +144,6 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-
 }
 
 h3 {
@@ -189,6 +195,7 @@ font-family: 'Thasadith', sans-serif;
   background-color: #61abab !important;
   border-color: #61abab !important;
   font-family: 'Thasadith', sans-serif !important;
+}
 
 @keyframes fadein {
   0% {

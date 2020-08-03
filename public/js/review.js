@@ -14,11 +14,7 @@ $(document).ready(function() {
       placeId: $("#place-review-list :selected").data("placeId")
     };
     console.log("submitting review..." + JSON.stringify(userData));
-    if (
-      !userData.placeSelected ||
-      !userData.placeReview ||
-      !userData.reviewTitle
-    ) {
+    if (!userData.placeId || !userData.placeReview || !userData.reviewTitle) {
       return;
     } else {
       addReview(userData);

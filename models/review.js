@@ -14,13 +14,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Review.associate = function(models) {
-  //   Review.belongsTo(models.Place, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
-
   return Review;
 };
